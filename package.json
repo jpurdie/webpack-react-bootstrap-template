@@ -2,7 +2,7 @@
   "name": "wbv_skeleton",
   "packageManager": "yarn@3.1.1",
   "version": "1.0.0",
-  "description": "Webpack 5. Bootstrap 5. Vue 3. Skeleton/Template/Starter",
+  "description": "Webpack 5. Bootstrap 5. React. Skeleton/Template/Starter",
   "scripts": {
     "caniuse": "npx browserslist@latest --update-db",
     "lint": "npx eslint src",
@@ -19,8 +19,9 @@
     "axios": "^0.27.2",
     "bootstrap": "^5.2.2",
     "dayjs": "^1.11.2",
-    "validator": "^13.7.0",
-    "vue": "^3.2.33"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.4",
@@ -41,7 +42,7 @@
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.6.0",
+    "eslint-plugin-react": "^7.31.10",
     "eslint-webpack-plugin": "^3.2.0",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
@@ -59,9 +60,6 @@
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.3",
-    "vue-loader": "^17.0.0",
-    "vue-style-loader": "^4.1.3",
-    "vue-template-compiler": "^2.6.14",
     "webpack": "^5.74.0",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.9.2",

@@ -15,9 +15,7 @@ module.exports = {
     publicPath: '/dist/',
   },
   resolve: {
-    alias: {
-      vue$: 'vue/dist/vue.esm-bundler.js',
-    },
+    alias: {},
   },
   plugins: [
     new EslintPlugin({
@@ -28,10 +26,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
-    }),
-    new webpack.DefinePlugin({
-      __VUE_OPTIONS_API__: true,
-      __VUE_PROD_DEVTOOLS__: true,
     }),
   ],
   optimization: {

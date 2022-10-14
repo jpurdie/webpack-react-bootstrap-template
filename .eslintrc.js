@@ -7,7 +7,6 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
-    'plugin:vue/vue3-essential',
     'plugin:prettier/recommended',
     // 'plugin:import/errors',
     // 'plugin:import/warnings',
