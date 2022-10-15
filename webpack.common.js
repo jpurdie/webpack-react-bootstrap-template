@@ -29,15 +29,16 @@ module.exports = {
     }),
   ],
   optimization: {
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          chunks: 'initial',
-        },
-      },
-    },
+    runtimeChunk: 'single',
+    // splitChunks: {
+    //   cacheGroups: {
+    //     commons: {
+    //       test: /[\\/]node_modules[\\/]/,
+    //       name: 'vendor',
+    //       chunks: 'initial',
+    //     },
+    //   },
+    // },
   },
   module: {
     rules: [

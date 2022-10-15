@@ -11,6 +11,7 @@
     "prettier:fix": "npx prettier src test --write",
     "format": "yarn prettier:fix && yarn lint:fix",
     "test": "jest ./src --maxWorkers 1",
+    "watch": "cross-env NODE_ENV=development webpack --config webpack.dev.js --watch",
     "dev": "cross-env NODE_ENV=development webpack --config webpack.dev.js",
     "prod": "cross-env NODE_ENV=production webpack --config webpack.prod.js"
   },
@@ -62,8 +63,7 @@
     "terser-webpack-plugin": "^5.3.3",
     "webpack": "^5.74.0",
     "webpack-bundle-analyzer": "^4.4.2",
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.11.1",
+    "webpack-cli": "^4.10.0",
     "webpack-merge": "^5.8.0"
   }
 }

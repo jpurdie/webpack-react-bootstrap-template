@@ -9613,7 +9613,7 @@ __metadata:
     validator: ^13.7.0
     webpack: ^5.74.0
     webpack-bundle-analyzer: ^4.4.2
-    webpack-cli: ^4.9.2
+    webpack-cli: ^4.10.0
     webpack-dev-server: ^4.11.1
     webpack-merge: ^5.8.0
   languageName: unknown
@@ -9645,7 +9645,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-cli@npm:^4.9.2":
+"webpack-cli@npm:^4.10.0":
   version: 4.10.0
   resolution: "webpack-cli@npm:4.10.0"
   dependencies:

@@ -9,7 +9,7 @@ initBootstrap({
   toasts: true,
 });
 
-console.log('App Initiated');
+console.log('App Initiated.');
 
 const e = React.createElement;
 
@@ -31,3 +31,5 @@ class LikeButton extends React.Component {
 const domContainer = document.querySelector('#like_button_container');
 const root = ReactDOM.createRoot(domContainer);
 root.render(e(LikeButton));
+
+document.getElementById('navbar-brand').innerHTML = 'Foobars';
