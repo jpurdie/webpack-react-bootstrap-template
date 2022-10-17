@@ -1,31 +1,29 @@
+const paths = require('./paths');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const EslintPlugin = require('eslint-webpack-plugin');
-const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/app.js',
+    entry: [paths.src + '/index.js'],
   },
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, './dist'),
-    assetModuleFilename: './images/[name][ext][query]',
+    path: paths.build,
+    filename: '[name].bundle.js',
+    publicPath: '/',
     clean: true,
-    publicPath: '/dist/',
-  },
-  resolve: {
-    alias: {},
   },
   plugins: [
-    new EslintPlugin({
-      overrideConfigFile: path.resolve(__dirname, '.eslintrc.js'),
-      context: path.resolve(__dirname, './src'),
-      files: '**/*.js',
-    }),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[id].[contenthash].css',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Project Title',
+      favicon: paths.src + '/assets/icons/favicon.png',
+      template: paths.public + '/index.html', // template file
+      filename: 'index.html', // output file
+      publicPath: './',
     }),
   ],
   optimization: {
@@ -42,6 +40,7 @@ module.exports = {
   },
   module: {
     rules: [
+      { test: /\.(js|jsx)$/, exclude: /node_modules/, use: ['babel-loader'] },
       {
         test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
         type: 'asset/resource',
@@ -57,17 +56,6 @@ module.exports = {
       {
         test: /\.s?css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
-      },
-      {
-        test: /\.m?js$|jsx/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [['@babel/preset-env', { targets: 'defaults' }]],
-            plugins: ['@babel/plugin-transform-runtime'],
-          },
-        },
       },
     ],
   },

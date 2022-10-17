@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+      "target": "ES2019",
+      "lib": [
+          "dom",
+          "dom.iterable",
+          "esnext"
+      ],
+      "allowJs": true,
+      "allowSyntheticDefaultImports": true,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "strict": true,
+      "baseUrl": "./src",
+      "rootDir": "./src",
+      "alwaysStrict": true,
+      "forceConsistentCasingInFileNames": true,
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "noEmit": true,
+      "jsx": "react",
+      "paths": {
+          "@routes/*": [
+              "routes/*"
+          ]
+
+      }
+  },
+  "include": [
+      "src"
+  ]
+}
