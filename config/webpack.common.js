@@ -5,38 +5,39 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    entry: [paths.src + '/index.js'],
+    app: paths.src + '/App.jsx',
+    contact: paths.src + '/contact.js',
   },
   output: {
+    // path: paths.build,
+    filename: '[name].min.js',
     path: paths.build,
-    filename: '[name].bundle.js',
     publicPath: '/',
     clean: true,
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: '[name].css',
       chunkFilename: '[id].[contenthash].css',
     }),
     new HtmlWebpackPlugin({
       title: 'Project Title',
-      favicon: paths.src + '/assets/icons/favicon.png',
+      favicon: paths.src + '/assets/icons/favicon.ico',
       template: paths.public + '/index.html', // template file
       filename: 'index.html', // output file
       publicPath: './',
     }),
   ],
   optimization: {
-    runtimeChunk: 'single',
-    // splitChunks: {
-    //   cacheGroups: {
-    //     commons: {
-    //       test: /[\\/]node_modules[\\/]/,
-    //       name: 'vendor',
-    //       chunks: 'initial',
-    //     },
-    //   },
-    // },
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'initial',
+        },
+      },
+    },
   },
   module: {
     rules: [
