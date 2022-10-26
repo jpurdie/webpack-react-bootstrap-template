@@ -6,18 +6,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     app: paths.src + '/App.js',
-    contact: paths.src + '/Contact/index.js',
+    // contact: paths.src + '/Contact/index.js',
   },
   output: {
     // path: paths.build,
-    filename: '[name].min.js',
+    filename: '[name].[contenthash].js',
     path: paths.build,
     publicPath: '/',
     clean: true,
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '[name].[contenthash].css',
       chunkFilename: '[id].[contenthash].css',
     }),
     new HtmlWebpackPlugin({

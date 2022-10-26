@@ -3,9 +3,8 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    jest: true,
   },
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   extends: [
     'airbnb-base',
     'plugin:prettier/recommended',
@@ -14,14 +13,14 @@ module.exports = {
     'prettier/react',
   ],
   parserOptions: {
-    ecmaVersion: '2017',
+    ecmaVersion: 'latest',
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
       jsx: true,
     },
     sourceType: 'module',
   },
-  plugins: ['babel', 'react', 'import', 'prettier', 'react-hooks'],
+  plugins: ['react', 'import', 'prettier', 'react-hooks'],
   rules: {
     'import/no-duplicates': 'error',
     'import/no-unresolved': 'error',
@@ -36,7 +35,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'array-callback-return': 'error',
     'consistent-return': 'error',
-    'babel/no-invalid-this': 'error',
     'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'no-console': ['off', { allow: ['warn', 'error'] }],
   },
