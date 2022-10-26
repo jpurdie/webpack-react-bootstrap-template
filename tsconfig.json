@@ -1,33 +1,35 @@
 {
   "compilerOptions": {
-      "target": "ES2019",
-      "lib": [
-          "dom",
-          "dom.iterable",
-          "esnext"
-      ],
-      "allowJs": true,
-      "allowSyntheticDefaultImports": true,
-      "skipLibCheck": true,
-      "esModuleInterop": true,
-      "strict": true,
-      "baseUrl": "./src",
-      "rootDir": "./src",
-      "alwaysStrict": true,
-      "forceConsistentCasingInFileNames": true,
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-      "isolatedModules": true,
-      "noEmit": true,
-      "jsx": "react",
-      "paths": {
-          "@routes/*": [
-              "routes/*"
-          ]
-
-      }
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "alwaysStrict": true,
+    "paths": {
+      "@routes/*": [
+        "routes/*"
+      ]
+    }
   },
   "include": [
-      "src"
+    ".eslintrc.js",
+    "src"
   ]
 }
