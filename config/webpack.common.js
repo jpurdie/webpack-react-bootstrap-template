@@ -5,8 +5,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: paths.src + '/App.js',
+    app: paths.src + '/main.tsx',
     // contact: paths.src + '/Contact/index.js',
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
     // path: paths.build,
@@ -41,7 +44,21 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.(js|jsx)$/, exclude: /node_modules/, use: ['babel-loader'] },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
+      {
+        test: /\.([cm]?ts|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+          },
+        },
+      },
       {
         test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
         type: 'asset/resource',
@@ -50,7 +67,6 @@ module.exports = {
         test: /\.(eot|woff|woff2|ttf)$/,
         type: 'asset/resource',
         generator: {
-          // publicPath: '../fonts/',
           filename: 'dist/fonts/[hash][ext][query]',
         },
       },

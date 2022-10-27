@@ -1,8 +1,8 @@
-// Importing the Bootstrap CSS
+// // Importing the Bootstrap CSS
 import './scss/app.scss';
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+ import React from 'react';
+ import ReactDOM from 'react-dom/client';
 import ContactForm from './Contact/Form';
 import NavBar from './shared/components/Navbar';
 import Bootstrap from './bootstrap';
@@ -21,9 +21,4 @@ const App = () => (
   </div>
 );
 
-const e = React.createElement;
-
-const domContainer = document.querySelector('#app');
-const root = ReactDOM.createRoot(domContainer);
-
-root.render(e(App));
+export default App;

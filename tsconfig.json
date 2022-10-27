@@ -1,35 +1,31 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "es5",
+    "noImplicitAny": true,
     "useDefineForClassFields": true,
     "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
+      "dom",
+      "dom.iterable",
+      "esnext"
     ],
-    "allowJs": false,
+    "noEmitOnError": true,
+    "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "./src",
-    "rootDir": "./src",
-    "alwaysStrict": true,
-    "paths": {
-      "@routes/*": [
-        "routes/*"
-      ]
-    }
+    "outDir": "./dist/",
+
   },
   "include": [
     ".eslintrc.js",
-    "src"
-  ]
+    "src"   ]
 }
