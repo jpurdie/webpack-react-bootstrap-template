@@ -1,4 +1,4 @@
-// // Importing the Bootstrap CSS
+//mporting the Bootstrap CSS
 import './scss/app.scss';
 
  import React from 'react';
@@ -9,8 +9,11 @@ import Bootstrap from './bootstrap';
 
 const App = () => (
   <div>
-    <NavBar />
+    <NavBar/>
     <br />
+
+
+    
     <div className='container'>
       <div className='row justify-content-center'>
         <div className='col-12 col-sm-6 align-self-center'>

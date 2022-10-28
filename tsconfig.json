@@ -23,9 +23,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "outDir": "./dist/",
-
   },
   "include": [
     ".eslintrc.js",
-    "src"   ]
+    "src"
+  ]
 }
