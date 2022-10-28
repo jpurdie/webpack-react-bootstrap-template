@@ -13,10 +13,11 @@ const App = () => (
   <div>
     <NavBar />
     <br />
+
     <div className='container'>
       <div className='row justify-content-center'>
         <div className='col-12 col-sm-6 align-self-center'>
-          <h1>Hello World</h1>
+          <ContactForm />
         </div>
       </div>
     </div>

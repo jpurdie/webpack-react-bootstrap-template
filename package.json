@@ -14,7 +14,7 @@
     "test": "vitest --dir ./src --run --reporter verbose",
     "test:watch": "vitest",
     "watch": "cross-env NODE_ENV=development webpack --config ./config/webpack.dev.js --watch",
-    "dev": "cross-env NODE_ENV=development webpack --config ./config/webpack.common.js",
+    "dev": "cross-env NODE_ENV=development webpack --config ./config/webpack.dev.js",
     "prod": "cross-env NODE_ENV=production webpack --config ./config/webpack.prod.js"
   },
   "dependencies": {

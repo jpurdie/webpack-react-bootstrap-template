@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     app: paths.src + '/main.tsx',
-    // contact: paths.src + '/Contact/index.js',
+    contact: paths.src + '/main-contact.tsx',
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -29,6 +29,15 @@ module.exports = {
       template: paths.public + '/index.html', // template file
       filename: 'index.html', // output file
       publicPath: './',
+      chunks: ['app'],
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Project Title',
+      favicon: paths.src + '/assets/icons/favicon.ico',
+      template: paths.public + '/contact.html', // template file
+      filename: 'contact.html', // output file
+      publicPath: './',
+      chunks: ['contact'],
     }),
   ],
   optimization: {
