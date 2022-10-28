@@ -7,7 +7,7 @@ import ContactForm from './Contact/Form';
 import NavBar from './shared/components/Navbar';
 import initBootstrap from './bootstrap';
 
-initBootstrap(true);
+initBootstrap(true, true);
 
 const App = () => (
   <div>
@@ -16,7 +16,7 @@ const App = () => (
     <div className='container'>
       <div className='row justify-content-center'>
         <div className='col-12 col-sm-6 align-self-center'>
-          <h1>Hello World</h1>
+          <h1>Hello World.</h1>
         </div>
       </div>
     </div>

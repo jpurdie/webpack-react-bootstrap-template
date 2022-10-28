@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import dayjs from 'dayjs';
 
 const NavBar = () => {
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds((seconds) => seconds + 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
       <div className='container-fluid'>
         <a className='navbar-brand' href='#'>
           Navbar
         </a>
+
         <button
           className='navbar-toggler'
           type='button'
@@ -68,7 +79,9 @@ const NavBar = () => {
               </a>
             </li>
           </ul>
-          <form className='d-flex'>
+          <span className='navbar-text'>{seconds} seconds have elapsed since mounting.</span>
+
+          <form className='d-flex px-1'>
             <input
               className='form-control me-2'
               type='search'
