@@ -5,9 +5,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import ContactForm from './Contact/Form';
 import NavBar from './shared/components/Navbar';
-import initBootstrap from './bootstrap';
-
-initBootstrap(true);
 
 const App = () => (
   <div>

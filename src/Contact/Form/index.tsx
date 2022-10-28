@@ -29,6 +29,16 @@ const ContactForm = () => {
           Check me out
         </label>
       </div>
+      <button
+        type='button'
+        className='btn btn-primary mx-1'
+        data-bs-toggle='popover'
+        title='Popover title'
+        data-bs-content="And here's some amazing content. It's very engaging. Right?"
+      >
+        Click to toggle popover
+      </button>
+
       <button type='submit' className='btn btn-primary'>
         Submit
       </button>

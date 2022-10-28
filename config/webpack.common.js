@@ -17,7 +17,9 @@ const htmlTempaltes = [
   }),
 ];
 
-/* This is for multiple html templates. Shared libraries will be in "vendor.js/css". */
+/* 
+  This is for multiple html templates. Shared libraries will be in "vendor.js/css". 
+*/
 htmlTempaltes.push(
   new HtmlWebpackPlugin({
     title: 'Project Title',

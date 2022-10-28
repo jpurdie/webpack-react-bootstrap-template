@@ -2,7 +2,7 @@
   "name": "wbv_skeleton",
   "packageManager": "yarn@3.1.1",
   "version": "1.0.0",
-  "description": "Webpack 5. Bootstrap 5. React. Skeleton/Template/Starter/Boilerplate",
+  "description": "   ",
   "main": "src/index.js",
   "scripts": {
     "caniuse": "npx browserslist@latest --update-db",

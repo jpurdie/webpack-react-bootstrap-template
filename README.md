@@ -1,3 +1,13 @@
+Template / Boilerplate / Skeleton / Starter 
+
+- React & React DOM
+- Bootstrap 5
+- Typescript
+- Vitest
+- Webpack 5
+- Prettier
+- ESLint
+
 
 To install:
 
