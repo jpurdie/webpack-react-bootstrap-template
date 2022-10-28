@@ -7,6 +7,7 @@
 - Webpack 5
 - Prettier
 - ESLint
+- SCSS
 
 
 To install:
