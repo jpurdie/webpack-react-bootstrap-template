@@ -13,13 +13,19 @@ To install:
 
 `yarn`
 
-to build:
+to develop:
 
-`yarn watch` or `yarn dev` or `yarn prod`
+`yarn watch` or `yarn dev` 
 
 to test:
 
-`yarn test`
+`yarn test` or `yarn test:watch`
+
+to build prod:
+
+`yarn prod`
+
+
 
 
 https://github.com/jpurdie/webpack-react-bootstrap-template
