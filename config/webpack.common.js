@@ -3,11 +3,37 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const entries = {
+  app: paths.src + '/main.tsx',
+};
+const htmlTempaltes = [
+  new HtmlWebpackPlugin({
+    title: 'Project Title',
+    favicon: paths.src + '/assets/icons/favicon.ico',
+    template: paths.public + '/index.html', // template file
+    filename: 'index.html', // output file
+    publicPath: './',
+    chunks: ['app'],
+  }),
+];
+
+/* This is for multiple html templates. Shared libraries will be in "vendor.js/css". */
+htmlTempaltes.push(
+  new HtmlWebpackPlugin({
+    title: 'Project Title',
+    favicon: paths.src + '/assets/icons/favicon.ico',
+    template: paths.public + '/contact.html', // template file
+    filename: 'contact.html', // output file
+    publicPath: './',
+    chunks: ['contact'], // needs to match the "entry" key
+  })
+);
+entries.contact = paths.src + '/main-contact.tsx';
+
+/* End multiple html templates config */
+
 module.exports = {
-  entry: {
-    app: paths.src + '/main.tsx',
-    contact: paths.src + '/main-contact.tsx',
-  },
+  entry: entries,
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
@@ -23,22 +49,7 @@ module.exports = {
       filename: '[name].[contenthash].css',
       chunkFilename: '[id].[contenthash].css',
     }),
-    new HtmlWebpackPlugin({
-      title: 'Project Title',
-      favicon: paths.src + '/assets/icons/favicon.ico',
-      template: paths.public + '/index.html', // template file
-      filename: 'index.html', // output file
-      publicPath: './',
-      chunks: ['app'],
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Project Title',
-      favicon: paths.src + '/assets/icons/favicon.ico',
-      template: paths.public + '/contact.html', // template file
-      filename: 'contact.html', // output file
-      publicPath: './',
-      chunks: ['contact'],
-    }),
+    ...htmlTempaltes,
   ],
   optimization: {
     splitChunks: {
@@ -59,7 +70,7 @@ module.exports = {
         use: ['babel-loader'],
       },
       {
-        test: /\.([cm]?ts|tsx)$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
